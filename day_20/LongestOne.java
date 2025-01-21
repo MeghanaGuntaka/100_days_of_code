@@ -1,0 +1,27 @@
+package day_20;
+
+public class LongestOne {
+	public int longestOnes(int[] nums, int k) {
+		int left = 0;  
+		int right = 0;  
+		int maxConsecutiveOnes = 0;
+		int zeroCount = 0;  
+		while (right < nums.length) {
+			if (nums[right] == 0) {
+				zeroCount++;
+			}
+			while (zeroCount > k) {
+				if (nums[left] == 0) {
+					zeroCount--;
+				}
+				left++;  
+			}
+			maxConsecutiveOnes = Math.max(maxConsecutiveOnes, right - left + 1);
+			right++;  
+		}
+
+		return maxConsecutiveOnes;
+
+
+	}
+}
