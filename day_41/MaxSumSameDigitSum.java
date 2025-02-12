@@ -15,7 +15,7 @@ public class MaxSumSameDigitSum {
 			}
 			map.put(digitSum, Math.max(map.getOrDefault(digitSum, 0), num));
 		}
-   
+     
 		return maxSum;
 	}
 	private static int getDigitSum(int num) {
